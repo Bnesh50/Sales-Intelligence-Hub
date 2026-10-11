@@ -2,7 +2,6 @@
 import streamlit as st
 import mysql.connector
 import pandas as pd
-import os
 from io import BytesIO
 from datetime import date
 from reportlab.lib import colors
@@ -14,11 +13,11 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, Tabl
 st.set_page_config(page_title="Sales Intelligence Hub", page_icon="📊", layout="wide", initial_sidebar_state="expanded")
 
 DB_CONFIG = {
-    "host": os.getenv("DB_HOST", "localhost"),
-    "port": int(os.getenv("DB_PORT", "3306")),
-    "user": os.getenv("DB_USER", "root"),
-    "password": os.getenv("DB_PASSWORD", ""),
-    "database": os.getenv("DB_NAME", "sales_management"),
+    "host": "localhost",
+    "port": 3306,
+    "user": "root",
+    "password": "root",
+    "database": "sales_management",
 }
 PRODUCTS = ["DS", "DA", "BA", "FSD", "BI", "AI", "ML", "SQL"]
 PAYMENT_METHODS = ["Cash", "UPI", "Card"]
